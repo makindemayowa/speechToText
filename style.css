@@ -1,0 +1,67 @@
+.main {
+  background: url(images/speech.jpg) no-repeat 0px 0px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative; }
+
+.actions {
+  padding-top: 40vh;
+  text-align: center;
+}
+
+.text-area, .text-area:hover, .text-area:active {
+  border: 1px solid black !important;
+  height: 300px !important;
+  width: 100%; }
+
+.faIcon {
+  margin-left: 10px; }
+
+.voice_2_text {
+  margin-right: 10px;
+  width: 193px;
+  -webkit-transition: width 2s;
+  transition: width;
+  background-color: #1FBBDC;
+}
+
+.text_2_voice {
+  width: 193px;
+  background-color: #68CE6A;
+  margin-right: 20px;
+  -webkit-transition: width 2s;
+  transition: width;
+}
+
+.text_2_voice:hover {
+  width: 200px; }
+
+.voice_2_text:hover {
+  width: 200px; }
+
+.final {
+  color: black;
+  padding-right: 3px; 
+}
+.interim {
+  color: gray;
+}
+
+@media (max-width: 568px) {
+  /* .main {
+  	min-height: 100vh;
+  	background: url(images/speech.jpg)no-repeat -83px 0px;
+  	background-size: cover;
+  } */ }
+@media (max-width: 440px) {
+  	/* .main {
+  		min-height: 100vh;
+  		background: url(images/speech.jpg)no-repeat -93px 0px;
+  		background-size: cover;
+    } */ }
+
+/*# sourceMappingURL=style.css.map */

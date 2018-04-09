@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Speech to Text</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+  <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+  <!-- <script src="dropzone.js"></script> -->
+</head>
+
+<body>
+  <div class="main">
+    <div class="actions row">
+      <a id="voice_2_text" href="#modal2" class="modal-trigger voice_2_text pull-right waves-effect waves-light btn">Voice to Text
+        <i class="far faIcon fa-file-alt"></i>
+      </a>
+      <a href="#modal1" class="modal-trigger text_2_voice pull-right waves-effect waves-light btn">Text to Voice
+        <i class="fas faIcon fa-microphone"></i>
+      </a>
+      <a href="#modal3" class="modal-trigger pdf_2_voice pull-right waves-effect waves-light btn">Pdf to Voice
+        <i class="far fa-file-pdf"></i>
+      </a>
+    </div>
+
+    <!-- Text to Voice Modal -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Insert text to read here</h4>
+        <input class="text-area" placeholder="Enter text here" type="text" id="textarea1" />
+        <!-- <textarea class="text-area" placeholder="Enter text here" id="textarea1" class="materialize-textarea"></textarea> -->
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="text_2_voice" class="modal-action waves-effect waves-red btn-flat">Read</a>
+        <a href="#!" id="close" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      </div>
+    </div>
+
+    <!--Voice to Text Modal -->
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h5>begin speaking...</h5>
+        <div class="text-area" placeholder="Enter text here" class="materialize-textarea">
+          <span id="final_span" class="final"></span>
+          <span id="interim_span" class="interim"></span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="clear_text" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+      </div>
+    </div>
+
+    <!--Pdf to Voice Modal -->
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <h5>Drop pdf file here</h5>
+        <form action="javascript:alert('Hello there, I am being submitted');" method="POST" class="dropzone">
+          <div class="fallback">
+            <input name="pdfFile" type="file" multiple onchange="handleFiles(this.files)" />
+          </div>
+        </form>
+
+        <div id="pdfDetails">
+          <button id="prev">Previous</button>
+          <button id="next">Next</button>
+          &nbsp; &nbsp;
+          <span>Page:
+            <span id="page_num"></span> /
+            <span id="page_count"></span>
+          </span>
+        </div>
+        <canvas id="the-canvas"></canvas>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="cancelSpeech" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+        <a href="#!" id="pauseSpeech" class="modal-action waves-effect waves-green btn-flat">Pause</a>
+        <a href="#!" id="resumeSpeech" class="modal-action waves-effect waves-green btn-flat">Resume</a>
+        <a href="#!" id="startSpeech" class="modal-action waves-effect waves-green btn-flat">Start Speaking</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+</html>
